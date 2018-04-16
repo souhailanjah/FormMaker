@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 //var fs = require('fs');
 
-var resp = [
+var data = [
     {
         "question": {
             "q_id": "q_id",
@@ -104,20 +104,20 @@ var resp = [
 ]
 
 var QuestionSchema = mongoose.Schema({
-	q_content: {
+	value: {
         type: String,
         required: true
 	},
-	q_responseList: {
+	answersList: {
 		type: Array
 	}
 });
 
 var Question = module.exports = mongoose.model('Question', QuestionSchema);
-
+/*
 module.exports.findQuestionById = function(id,callback){
   Question.findById(id,callback);
-}
+}*/
 
 module.exports.getQuestionsList = function(data,calllback){
     //parse data and get question[i].value
