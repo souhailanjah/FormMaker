@@ -1,7 +1,11 @@
 var mongoose = require('mongoose');
 //var fs = require('fs');
 
+<<<<<<< HEAD
 var resp = [
+=======
+var data = [
+>>>>>>> second commit
     {
         "question": {
             "q_id": "q_id",
@@ -104,20 +108,34 @@ var resp = [
 ]
 
 var QuestionSchema = mongoose.Schema({
+<<<<<<< HEAD
 	q_content: {
         type: String,
         required: true
 	},
 	q_responseList: {
+=======
+	value: {
+        type: String,
+        required: true
+	},
+	answersList: {
+>>>>>>> second commit
 		type: Array
 	}
 });
 
 var Question = module.exports = mongoose.model('Question', QuestionSchema);
 
+<<<<<<< HEAD
 module.exports.findQuestionById = function(id,callback){
   Question.findById(id,callback);
 }
+=======
+/*module.exports.findQuestionById = function(id,callback){
+  Question.findById(id,callback);
+}*/
+>>>>>>> second commit
 
 module.exports.getQuestionsList = function(data,calllback){
     //parse data and get question[i].value
