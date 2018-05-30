@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var cors = require('cors');
+var passport = require('passport');
 var routes = require('./routes/index');
-//var mongo = require('mongodb');
+var users = require('./routes/users');
 var mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var db = require('./config/database');
 var app = express();
 var port = process.env.PORT || 3000;
@@ -26,6 +28,7 @@ mongoose.connection.on('error',(err)=>{
 });
 
 app.use('/', routes);
+app.use('/users',users);
 
 var listener = app.listen(3000, function(){
     console.log('Listening on port ' + listener.address().port);
